@@ -1,9 +1,9 @@
-# 🗾 streamlit-keplergl
+# streamlit-keplergl
 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/chrieke/streamlit-keplergl/examples/streamlit-keplergl-example.py)
 [![PyPi](https://img.shields.io/pypi/v/streamlit-analytics)](https://pypi.org/project/streamlit-keplergl/)
 
-**Streamlit Component for rendering [kepler.gl](https://github.com/keplergl/kepler.gl/tree/master/bindings/kepler.gl-jupyter) maps in a streamlit app.**
+**🗾 Streamlit Component for rendering [kepler.gl](https://github.com/keplergl/kepler.gl/tree/master/bindings/kepler.gl-jupyter) maps in a streamlit app.**
 
 ---
 
@@ -29,6 +29,8 @@ pip install streamlit-keplergl
 import streamlit as st
 from streamlit_keplergl import keplergl_static
 from keplergl import KeplerGl
+
+st.write("This is a kepler.gl map")
 
 map_1 = KeplerGl(height=400)
 keplergl_static(map_1)
