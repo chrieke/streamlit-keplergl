@@ -27,8 +27,8 @@ def keplergl_static(
     """
     try:
         html = fig._repr_html_()
-    except TypeError:
-        raise TypeError("Object has to be of type keplergl.KeplerGl!")
+    except AttributeError:
+        raise TypeError("fig argument has to be a keplergl map object of type keplergl.KeplerGl!")
 
     return components.html(
         html, height=(fig.height or height) + 10, width=width, scrolling=scrolling
