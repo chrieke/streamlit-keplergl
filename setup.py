@@ -1,7 +1,10 @@
 import setuptools
+from pathlib import Path
+
+parent_dir = Path(__file__).resolve().parent
 
 setuptools.setup(
-    name="streamlit_keplergl",
+    name="streamlit-keplergl",
     version="0.0.1",
     author="Christoph Rieke",
     author_email="",
@@ -9,9 +12,10 @@ setuptools.setup(
     long_description="",
     long_description_content_type="text/plain",
     url="https://github.com/chrieke/streamlit-keplergl",
-    packages=setuptools.find_packages(),
+    license="MIT",
+    packages=setuptools.find_packages(exclude=("tests", "docs", "examples")),
     include_package_data=True,
     classifiers=[],
     python_requires=">=3.6",
-    install_requires=["streamlit>=0.79", "keplergl"],
+    install_requires=parent_dir.joinpath("requirements.txt").read_text().splitlines(),
 )
