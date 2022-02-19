@@ -51,4 +51,8 @@ with col1:
    keplergl_static(map_1)
 ```
 
+## Adjust initial map location
+
+To adjust the default initial map location (San Franciso), use the KeplerGL object configuration, 
+see [here](https://github.com/chrieke/streamlit-keplergl/issues/4#issuecomment-1011207633).
 
