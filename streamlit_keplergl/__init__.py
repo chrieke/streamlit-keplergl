@@ -1,11 +1,11 @@
-# Load kepler.gl with an empty map
+from typing import Optional
 
 import streamlit.components.v1 as components
 from keplergl import KeplerGl
 
 
 def keplergl_static(
-    fig: KeplerGl, height: int = 400, width: int = 700, scrolling=False
+    fig: KeplerGl, height: Optional[int] = None, width: Optional[int] = None, **kwargs
 ) -> components.html:
     """
     Renders `keplergl.KeplerGl` map figure in a Streamlit app. This method is
@@ -14,22 +14,25 @@ def keplergl_static(
 
     Args:
         fig: `keplergl.KeplerGl` map figure.
-        height: Height of result. If `height` is set on the keplergl.KeplerGl` object,
-                that value supersedes the values set with the keyword arguments of this
-                function.
-        width: Width of result.
+        height: Fixed pixel height of the map, optional. By default determined by the height
+            setting of the KeplerGl.keplergl figure object.
+        width: Fixed pixel width of the map, optional. By default the width of the map adjusts
+            to the streamlit layout option, e.g. also when used inside a column or container etc.
+        kwargs: Add any argument of KeplerGl.save_to_html() (data, config, read_only).
 
     Example:
         ```python
-            >>> map_1 = KeplerGl(height=400)
+            >>> map_1 = KeplerGl()
             >>> keplergl_static(map_1)
         ```
     """
     try:
-        html = fig._repr_html_()
+        html = fig._repr_html_(kwargs)
     except AttributeError:
         raise TypeError("fig argument has to be a keplergl map object of type keplergl.KeplerGl!")
 
+    if height is None:
+        height = fig.height
     return components.html(
-        html, height=(fig.height or height) + 10, width=width, scrolling=scrolling
+        html, height=height + 10, width=width
     )
