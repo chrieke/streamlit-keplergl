@@ -27,7 +27,7 @@ def keplergl_static(
         ```
     """
     try:
-        html = fig._repr_html_(kwargs)
+        html = fig._repr_html_()
     except AttributeError:
         raise TypeError("fig argument has to be a keplergl map object of type keplergl.KeplerGl!")
 
