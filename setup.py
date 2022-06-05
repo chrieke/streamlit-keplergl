@@ -5,7 +5,7 @@ parent_dir = Path(__file__).resolve().parent
 
 setuptools.setup(
     name="streamlit-keplergl",
-    version="0.2.0",
+    version="0.3.0",
     author="Christoph Rieke",
     author_email="",
     description="Streamlit Component for rendering kepler.gl maps",
