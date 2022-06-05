@@ -36,14 +36,14 @@ map_1 = KeplerGl()
 keplergl_static(map_1)
 ```
 
-**Parameter:**
-- fig: `keplergl.KeplerGl` map figure.
-- height: Fixed pixel height of the map, optional. By default determined by the height setting of the KeplerGl.
+**Parameters:**
+- **fig**: `keplergl.KeplerGl` map figure.
+- **height**: Fixed pixel height of the map, optional. By default determined by the height setting of the KeplerGl.
   keplergl figure object. Setting width and height explcitly might result in non optimal layout on other devices.
-- width: Fixed pixel width of the map, optional. By default the adjusts to the streamlit layout option, e.g. 
+- **width**: Fixed pixel width of the map, optional. By default the adjusts to the streamlit layout option, e.g. 
   automatically adjusted to streamlit column or container width.
-- center_map: The bound of the map will be centered on the current map data, default False.
-- read_only: Hide side panel to disable map customization, default False.
+- **center_map**: The bound of the map will be centered on the current map data, default False.
+- **read_only**: Hide side panel to disable map customization, default False.
 
 
 To use the map widget within a streamlit column or other object:
