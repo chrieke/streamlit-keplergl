@@ -3,7 +3,7 @@
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/chrieke/streamlit-keplergl/main/examples/streamlit-keplergl-example.py)
 [![PyPi](https://img.shields.io/pypi/v/streamlit-keplergl)](https://pypi.org/project/streamlit-keplergl/)
 
-**🗾 Streamlit Component for rendering [kepler.gl](https://github.com/keplergl/kepler.gl/tree/master/bindings/kepler.gl-jupyter) maps in a streamlit app.**
+**🗾 Streamlit Component for rendering [kepler.gl](https://docs.kepler.gl/docs/keplergl-jupyter#2-add-data) maps in a streamlit app.**
 
 ---
 
@@ -44,12 +44,15 @@ however the size might then not be optimal when viewed on a different device or 
 keplergl_static(map_1, height=400, width=500)
 ```
 
-To use it within a streamlit column or other object:
+To use the map widget within a streamlit column or other object:
 ```python
 col1 = st.column(1)
 with col1:
    keplergl_static(map_1)
 ```
+
+Also see the [kepler.gl]([kepler.gl](https://docs.kepler.gl/docs/keplergl-jupyter#2-add-data)) documentation
+for general info on usage of kepler.gl in Python.
 
 ## Adjust initial map location
 
