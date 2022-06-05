@@ -5,7 +5,7 @@ from keplergl import KeplerGl
 
 
 def keplergl_static(
-    fig: KeplerGl, height: Optional[int] = None, width: Optional[int] = None, **kwargs
+    fig: KeplerGl, height: Optional[int] = None, width: Optional[int] = None, scrolling=False
 ) -> components.html:
     """
     Renders `keplergl.KeplerGl` map figure in a Streamlit app. This method is
@@ -27,12 +27,12 @@ def keplergl_static(
         ```
     """
     try:
-        html = fig._repr_html_(kwargs)
+        html = fig._repr_html_()
     except AttributeError:
         raise TypeError("fig argument has to be a keplergl map object of type keplergl.KeplerGl!")
 
     if height is None:
         height = fig.height
     return components.html(
-        html, height=height + 10, width=width
+        html, height=height + 10, width=width, scrolling=scrolling
     )
