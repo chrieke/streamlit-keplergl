@@ -53,7 +53,7 @@ with col1:
    keplergl_static(map_1)
 ```
 
-Also see the [kepler.gl]([kepler.gl](https://docs.kepler.gl/docs/keplergl-jupyter#2-add-data)) documentation
+Also see the [kepler.gl](https://docs.kepler.gl/docs/keplergl-jupyter#2-add-data) documentation
 for general info on usage of kepler.gl in Python.
 
 ## Adjust initial map location
