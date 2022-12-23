@@ -17,12 +17,11 @@ def keplergl_static(
 
     Args:
         fig: `keplergl.KeplerGl` map figure.
-        height: Fixed pixel height of the map, optional. By default determined by the height setting of the KeplerGl.
-          keplergl figure object. Setting width and height explcitly might result in non optimal layout on other devices.
-        width: Fixed pixel width of the map, optional. By default the adjusts to the streamlit layout option, e.g.
-          automatically adjusted to streamlit column or container width.
-        center_map: The bound of the map will be centered on the current map data, default False.
-        read_only: Hide side panel to disable map customization, default False.
+        height: Fixed pixel height of the map. Optional, might result in non-optimal layout on some devices. By
+            default the map height is determined by the keplergl figure height.
+        width: Fixed pixel width of the map. Optional, by default the map width adjusts to the streamlit layout.
+        center_map: Centers the map on the current map data, default False.
+        read_only: Disables the side panel for map customization, default False.
 
     Example:
         ```python
