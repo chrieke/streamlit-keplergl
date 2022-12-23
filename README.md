@@ -45,8 +45,8 @@ with col1:
 ```
 
 **Set map location:**  
-The initial map location is configured via the KeplerGL object configuration, see
-[example](https://github.com/chrieke/streamlit-keplergl/issues/4#issuecomment-1011207633). Or if your map contains data
+The initial map location is configured via the KeplerGL configuration, see
+[example](https://github.com/chrieke/streamlit-keplergl/blob/main/examples/streamlit-keplergl-example-with-config.py). Or if your map contains data
 ([example](https://github.com/chrieke/streamlit-keplergl/blob/main/examples/streamlit-keplergl-example-with-data.py)), 
 you can use the `center_map` parameter (see below).
 
