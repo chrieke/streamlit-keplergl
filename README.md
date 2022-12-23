@@ -44,14 +44,7 @@ with col1:
   keplergl_static(map_1)
 ```
 
-**Set map location:**  
-The initial map location is configured via the KeplerGL configuration, see
-[example](https://github.com/chrieke/streamlit-keplergl/blob/main/examples/streamlit-keplergl-example-with-config.py). Or if your map contains data
-([example](https://github.com/chrieke/streamlit-keplergl/blob/main/examples/streamlit-keplergl-example-with-data.py)), 
-you can use the `center_map` parameter (see below).
-
-
-## Parameters:
+## Parameters
 - **fig**: `keplergl.KeplerGl` map figure.
 - **height**: Fixed pixel height of the map. Optional, might result in non-optimal layout on some devices. By
   default the map height is determined by the keplergl figure height.
@@ -61,6 +54,16 @@ you can use the `center_map` parameter (see below).
 
 
 ## More infos
+
+**Set map location:**  
+The initial map location is not configured via `keplergl_static` but via the KeplerGL configuration, see
+[example](https://github.com/chrieke/streamlit-keplergl/blob/main/examples/streamlit-keplergl-example-with-config.py). 
+But if your map contains data, you can use the `center_map` parameter, see 
+[example](https://github.com/chrieke/streamlit-keplergl/blob/main/examples/streamlit-keplergl-example-with-data.py).
+
+**Static component:**  
+This is a static Streamlit component, thus information from browser interaction can not be passed back from
+KeplerGL to Python.
 
 Also see the [kepler.gl](https://docs.kepler.gl/docs/keplergl-jupyter#2-add-data) documentation
 for general info on usage of kepler.gl in Python.
