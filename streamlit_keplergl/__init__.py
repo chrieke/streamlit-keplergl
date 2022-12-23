@@ -8,12 +8,14 @@ def keplergl_static(
     fig: KeplerGl,
     height: Optional[int] = None,
     width: Optional[int] = None,
-    center_map=False,
-    read_only=False,
+    center_map: Optional[bool] = False,
+    read_only: Optional[bool] = False,
 ) -> components.html:
     """
-    Renders `keplergl.KeplerGl` map figure in a Streamlit app. This method is a static Streamlit Component,
-    thus no information is passed back from KeplerGL on browser interaction.
+    Renders a `keplergl.KeplerGl` map figure in a Streamlit app.
+
+    This is a static Streamlit component, thus information from browser interaction can not be passed back from
+    KeplerGL to Python.
 
     Args:
         fig: `keplergl.KeplerGl` map figure.
