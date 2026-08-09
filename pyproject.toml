@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "streamlit-keplergl"
-version = "0.3.0"
+version = "0.4.0"
 description = "Streamlit Component for rendering kepler.gl maps"
 readme = "README.md"
 license = { file = "LICENSE" }
