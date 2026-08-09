@@ -39,9 +39,9 @@ keplergl_static(map_1)
 
 **Use within a streamlit column etc:**
 ```python
-col1 = st.column(1)
+col1, col2 = st.columns(2)
 with col1:
-  keplergl_static(map_1)
+    keplergl_static(map_1)
 ```
 
 ## Parameters
