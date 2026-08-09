@@ -1,5 +1,6 @@
 from typing import Optional
 
+import streamlit as st
 import streamlit.components.v1 as components
 from keplergl import KeplerGl
 
@@ -8,9 +9,9 @@ def keplergl_static(
     fig: KeplerGl,
     height: Optional[int] = None,
     width: Optional[int] = None,
-    center_map: Optional[bool] = False,
-    read_only: Optional[bool] = False,
-) -> components.html:
+    center_map: bool = False,
+    read_only: bool = False,
+) -> None:
     """
     Renders a `keplergl.KeplerGl` map figure in a Streamlit app.
 
@@ -31,13 +32,20 @@ def keplergl_static(
             >>> keplergl_static(map_1)
         ```
     """
-    try:
-        html = fig._repr_html_(center_map=center_map, read_only=read_only)
-    except AttributeError:
+    if not isinstance(fig, KeplerGl):
         raise TypeError(
             "fig argument has to be a keplergl map object of type keplergl.KeplerGl!"
         )
 
+    html = fig._repr_html_(center_map=center_map, read_only=read_only)
+    if isinstance(html, bytes):  # keplergl returns utf-8 encoded bytes.
+        html = html.decode("utf-8")
+
     if height is None:
         height = fig.height
-    return components.html(html, height=height + 10, width=width)
+
+    if hasattr(st, "iframe"):
+        # `st.components.v1.html` is deprecated and scheduled for removal.
+        st.iframe(html, height=height + 10, width="stretch" if width is None else width)
+    else:
+        components.html(html, height=height + 10, width=width)
