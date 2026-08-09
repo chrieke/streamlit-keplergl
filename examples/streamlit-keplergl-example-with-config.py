@@ -1,6 +1,7 @@
 import streamlit as st
-from streamlit_keplergl import keplergl_static
 from keplergl import KeplerGl
+
+from streamlit_keplergl import keplergl_static
 
 st.write("This is a kepler.gl map with specified configuration in streamlit")
 

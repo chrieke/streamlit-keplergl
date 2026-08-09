@@ -1,7 +1,8 @@
-import streamlit as st
-from streamlit_keplergl import keplergl_static
-from keplergl import KeplerGl
 import pandas as pd
+import streamlit as st
+from keplergl import KeplerGl
+
+from streamlit_keplergl import keplergl_static
 
 df = pd.DataFrame(
     {
